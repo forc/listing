@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20130821235424) do
 
   create_table "categories", force: true do |t|
-    t.string   "type"
+    t.string   "ctype"
     t.string   "sub_type"
     t.datetime "created_at"
     t.datetime "updated_at"
