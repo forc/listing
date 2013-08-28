@@ -6,5 +6,10 @@ class HomeController < ApplicationController
     else
       [] 
     end
+    @cities = if params[:state]
+      City.where(state_id: params[:state])
+      else
+       []
+    end
   end
 end

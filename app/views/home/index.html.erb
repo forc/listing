@@ -4,5 +4,6 @@
 <%= form_tag('/index', method: :get) do %>
 Country: <%= select_tag "country", options_from_collection_for_select(@countries, "id", "name"), include_blank: true%>
 State: <%= select_tag "state", options_from_collection_for_select(@states, "id", "name"), include_blank: true%>
+City: <%= select_tag "city", options_from_collection_for_select(@cities, "id", "name"), include_blank: true%>
 <%= submit_tag 'Submit'%>
 <%end%>
