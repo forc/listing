@@ -5,15 +5,21 @@ class HomeController < ApplicationController
     @state_id = params[:state]
     @city_id = params[:city]
     @states = if params[:country]
-      State.where(country_id: params[:country])
-    else
-      [] 
-    end
+                State.where(country_id: params[:country])
+              else
+                [] 
+              end
 
     @cities = if params[:state]
-      City.where(state_id: params[:state])
-      else
-       []
+                City.where(state_id: params[:state])
+              else
+                []
+              end
+
+    respond_to do |format|
+      format.html
+      format.json {render json:  {states: @states} }
     end
+
   end
 end
